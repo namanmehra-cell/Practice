@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 public class SignIn {
 @Test(dataProvider = "cr")
 public void login(String username,String password) throws InterruptedException {
-	System.setProperty("webdriver.chrome.driver", "C:\\ChromeDriver\\chromedriver.exe");
+	System.setProperty("webdriver.chrome.driver", "C:\\\\Automation Softs\\\\chromedriver.exe");
 	WebDriver driver = new ChromeDriver();
 	driver.get("https://mobileworld.banyanpro.com/");
 	driver.manage().window().maximize();
