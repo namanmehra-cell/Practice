@@ -41,13 +41,6 @@ public class SignUp {
         driver.findElement(By.xpath("//input[@placeholder='91XXXXXXXXXX']")).sendKeys(num);
         driver.findElement(By.xpath("//textarea[@placeholder='Short Bio']")).sendKeys(message);
         driver.findElement(By.xpath("//button[.='Register']")).click();
-		String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\."+
-                "[a-zA-Z0-9_+&*-]+)*@" +
-                "(?:[a-zA-Z0-9-]+\\.)+[a-z" +
-                "A-Z]{2,7}$";
-		Pattern emailPat = Pattern.compile(emailRegex,Pattern.CASE_INSENSITIVE);
-		Matcher matcher = emailPat.matcher(mailId);
-		boolean tf = matcher.find();
         if(fname.equals("")) {
         	String validationMessage = (String)js.executeScript("return arguments[0].validationMessage;", firstname);
         	Assert.assertEquals("Please fill out this field.",validationMessage);
@@ -59,7 +52,7 @@ public class SignUp {
         	System.out.println(message2);
         	driver.quit();
         }
-        else if(mailId.equals("") || !tf) {
+        else if(mailId.equals("")) {
         	String message3 = (String)js.executeScript("return arguments[0].validationMessage;",emailID);
         	//Assert.assertEquals("Please fill out this field.",message3);
         	System.out.println(message3);
