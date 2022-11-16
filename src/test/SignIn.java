@@ -25,16 +25,16 @@ public void login(String username,String password) throws InterruptedException {
 @DataProvider(name="cr")
 public Object[][] dp1(){
 	Object[][] data = new Object[][] {
-		{"An","ABCabc123@"},//invalid username(less than 3 characters) and valid password(10 characters)
-		{"NamunaTim","ABCabc123@21"},////Valid username(between 3 and 20 characters ) and valid password(between 3 and 10 characters)
-		{"Na","A2"},//invalid username(less than 3 characters) and invalid password(less than 3 characters).
-		{"Nam","A1"},//valid username(3 characters) and invalid password(Less than 3 characters)
-		{"namuna12@12outlook.com","a1"},//invalid email id and invalid password(less than 3 characters)
-		{"namuna12@outlook.com","a1"},// valid email id and invalid password(less than 3 characters)
-		{"namuna12@outlook.com","a1b2c3d4"},// valid email id and valid password(between 3 and 10 characters)
-		{"namuna12@12outlook.com","a1b"},// invalid email id and valid password(3 characters password)
-		{" "," "},//empty fields
-		{"!@#$","special12"} // special characters in username/id and valid password
+		{"An","ABCabc123@"},
+		{"NamunaTim","ABCabc123@21"},
+		{"Na","A2"},
+		{"Nam","A1"},
+		{"namuna12@12outlook.com","a1"},
+		{"namuna12@outlook.com","a1"},
+		{"namuna12@outlook.com","a1b2c3d4"},
+		{"namuna12@12outlook.com","a1b"},
+		{" "," "},
+		{"!@#$","special12"}
 	};
 	return data;
 }
